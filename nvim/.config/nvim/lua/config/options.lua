@@ -5,7 +5,7 @@
 -- vim.opt.showcmdloc = "statusline"
 
 if vim.g.neovide then
-  vim.o.guifont = "AnnotationM NFM:h12"
+  vim.o.guifont = "AnnotationM NFM:h14"
 
   vim.g.neovide_cursor_animation_length = 0.08
   vim.g.neovide_cursor_trail_size = 0.8

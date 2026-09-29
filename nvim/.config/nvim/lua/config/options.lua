@@ -11,6 +11,13 @@ if vim.g.neovide then
   vim.g.neovide_cursor_trail_size = 0.8
 
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
+  -- vim.g.neovide_cursor_vfx_mode = "railgun"
+  -- vim.g.neovide_cursor_vfx_mode = "torpedo"
+  -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
+  -- vim.g.neovide_cursor_vfx_mode = "ripple"
+  -- vim.g.neovide_cursor_vfx_mode = "wireframe"
+  vim.g.neovide_cursor_vfx_particle_lifetime = 1.2
+  vim.g.neovide_cursor_vfx_particle_density = 1.6
 
   vim.g.neovide_scroll_animation_length = 0.2
   vim.g.neovide_scroll_animation_far_lines = 1

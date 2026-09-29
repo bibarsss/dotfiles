@@ -141,5 +141,5 @@ ___MY_VMOPTIONS_SHELL_FILE="$HOME/.jetbrains.vmoptions.sh"
 
 alias phpstorm='nohup phpstorm "$@" > /dev/null 2>&1 &' 
 nv() {
-  neovide --frame=none --title-hidden --vsync "$@"
+  neovide --frame=none --vsync "$@"
 }

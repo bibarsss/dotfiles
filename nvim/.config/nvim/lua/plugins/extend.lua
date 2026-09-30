@@ -47,21 +47,21 @@ return {
       },
     },
   },
-  {
-    "folke/snacks.nvim",
-    opts = {
-      picker = {
-        sources = {
-          explorer = {
-            hidden = true, -- Show hidden files (starting with a dot)
-            ignored = true, -- Show git-ignored files (like .env)
-          },
-          files = {
-            hidden = true,
-            ignored = true,
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   "folke/snacks.nvim",
+  --   opts = {
+  --     picker = {
+  --       sources = {
+  --         explorer = {
+  --           hidden = true, -- Show hidden files (starting with a dot)
+  --           ignored = true, -- Show git-ignored files (like .env)
+  --         },
+  --         files = {
+  --           hidden = true,
+  --           ignored = true,
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
 }

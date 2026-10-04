@@ -17,12 +17,26 @@ config.font_size = local_config.font_size or 14
 config.font = wezterm.font("AnnotationM Nerd Font Mono")
 config.enable_wayland = false
 config.audible_bell = "Disabled"
-config.window_decorations = "NONE"
 config.enable_tab_bar = false
 
 config.visual_bell = {
 	fade_in_duration_ms = 0,
 	fade_out_duration_ms = 0,
 }
+
+config.window_decorations = "NONE"
+
+-- config.window_padding = {
+-- 	left = 0,
+-- 	right = 0,
+-- 	top = 0,
+-- 	bottom = 0,
+-- }
+
+-- Center the content grid so the leftover gap isn't all at the bottom
+-- config.window_content_alignment = {
+-- 	horizontal = "Center",
+-- 	vertical = "Center",
+-- }
 
 return config

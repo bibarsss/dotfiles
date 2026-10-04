@@ -1,6 +1,6 @@
 return {
   -- to remove top buffers
-  -- { "akinsho/bufferline.nvim", enabled = false },
+  { "akinsho/bufferline.nvim", enabled = false },
   -- to disable explorer
   -- {
   --   "folke/snacks.nvim",

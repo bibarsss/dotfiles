@@ -15,3 +15,9 @@ end, { desc = "Focus or Open Explorer" })
 
 -- alt+/ to clear my search highlights
 vim.keymap.set({ "n", "v", "o", "i" }, "<M-/>", "<cmd>nohlsearch<cr>", { desc = "Clear Search Highlight" })
+
+vim.keymap.set("n", "<leader><delete>", "<cmd>%bd<cr>", { desc = "Close All Buffers" })
+
+vim.keymap.set("n", "<leader><CR>", function()
+  Snacks.bufdelete()
+end, { desc = "Close Buffer" })

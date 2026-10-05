@@ -25,13 +25,12 @@ config.visual_bell = {
 }
 
 config.window_decorations = "NONE"
-
--- config.window_padding = {
--- 	left = 0,
--- 	right = 0,
--- 	top = 0,
--- 	bottom = 0,
--- }
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
 -- Center the content grid so the leftover gap isn't all at the bottom
 -- config.window_content_alignment = {

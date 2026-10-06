@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      style = "night", -- Choose between storm, moon, night, day
+      -- style = "night", -- Choose between storm, moon, night, day
     },
   },
 

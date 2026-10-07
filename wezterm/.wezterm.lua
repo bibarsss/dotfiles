@@ -33,6 +33,47 @@ config.window_padding = {
 }
 
 config.color_scheme = "Tokyo Night"
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.97
+
+config.disable_default_key_bindings = true
+config.keys = {
+	-- Fullscreen
+	{
+		key = "Enter",
+		mods = "SUPER",
+		action = wezterm.action.ToggleFullScreen,
+	},
+
+	-- Copy
+	{
+		key = "c",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.CopyTo("Clipboard"),
+	},
+
+	-- Paste
+	{
+		key = "v",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.PasteFrom("Clipboard"),
+	},
+
+	-- Font size
+	{
+		key = "=",
+		mods = "CTRL",
+		action = wezterm.action.IncreaseFontSize,
+	},
+	{
+		key = "-",
+		mods = "CTRL",
+		action = wezterm.action.DecreaseFontSize,
+	},
+	{
+		key = "0",
+		mods = "CTRL",
+		action = wezterm.action.ResetFontSize,
+	},
+}
 
 return config

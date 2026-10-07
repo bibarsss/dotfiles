@@ -31,4 +31,5 @@ chmod +x ~/.local/bin/neovide
 
 ```
 ya pkg add mingo99/tokyonight
+ya pkg install
 ```

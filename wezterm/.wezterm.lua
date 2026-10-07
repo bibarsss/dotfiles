@@ -32,10 +32,6 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- Center the content grid so the leftover gap isn't all at the bottom
--- config.window_content_alignment = {
--- 	horizontal = "Center",
--- 	vertical = "Center",
--- }
+config.color_scheme = "Tokyo Night"
 
 return config

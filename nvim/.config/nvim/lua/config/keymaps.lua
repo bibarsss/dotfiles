@@ -21,3 +21,6 @@ vim.keymap.set("n", "<leader><delete>", "<cmd>%bd<cr>", { desc = "Close All Buff
 vim.keymap.set("n", "<leader><CR>", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
+
+vim.keymap.del({ "n", "i", "v" }, "<A-j>")
+vim.keymap.del({ "n", "i", "v" }, "<A-k>")

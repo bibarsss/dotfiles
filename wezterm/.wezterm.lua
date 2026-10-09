@@ -33,7 +33,7 @@ config.window_padding = {
 }
 
 config.color_scheme = "Tokyo Night"
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.97
 
 config.disable_default_key_bindings = true
 config.keys = {

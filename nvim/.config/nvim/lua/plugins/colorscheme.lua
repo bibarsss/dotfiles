@@ -10,7 +10,6 @@ return {
         sidebars = "transparent",
         floats = "transparent",
       },
-      -- style = "night", -- Choose between storm, moon, night, day
     },
   },
 

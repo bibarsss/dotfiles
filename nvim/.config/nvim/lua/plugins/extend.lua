@@ -65,6 +65,9 @@ return {
       --     },
       --   },
       -- },
+      lazygit = {
+        args = { "--use-config-file=" .. vim.fn.expand("~/.config/lazygit/nvim.yml") },
+      },
     },
   },
 }

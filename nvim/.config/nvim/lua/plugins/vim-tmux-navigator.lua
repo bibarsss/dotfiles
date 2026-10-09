@@ -33,6 +33,35 @@ return {
       once = true,
       callback = function()
         dofile(vim.fn.expand("~/.config/herdr/vim-herdr-navigation/editor/nvim.lua"))
+
+        -- Snacks explorer renders its list/input as floating windows nested
+        -- inside a box split. `wincmd h` from there doesn't reliably report
+        -- "no window to the left" (it can bounce into the preview split
+        -- instead), so the editor-side nav() never detects the edge and
+        -- never hands off to herdr. Cross out directly for these filetypes.
+        local function cross_left()
+          local pane = vim.env.HERDR_PANE_ID
+          if not pane or pane == "" then
+            return
+          end
+          local herdr = vim.env.HERDR_BIN_PATH
+          if herdr == nil or herdr == "" then
+            herdr = "herdr"
+          end
+          vim.fn.system({ herdr, "pane", "focus", "--direction", "left", "--pane", pane })
+        end
+
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = { "snacks_picker_list", "snacks_picker_input" },
+          callback = function(ev)
+            vim.keymap.set("n", "<C-h>", cross_left, {
+              buffer = ev.buf,
+              silent = true,
+              noremap = true,
+              desc = "Navigate left (vim/herdr)",
+            })
+          end,
+        })
       end,
     })
   end,

@@ -1,9 +1,11 @@
+onboarding = false
+
+
 # herdr configuration
 # Place this file at ~/.config/herdr/config.toml
 
 # Show first-run notification setup on startup.
 # Missing also shows onboarding; set false after you've chosen.
-# onboarding = true
 
 [theme]
 # Built-in themes: catppuccin, terminal, tokyo-night, dracula, nord,
@@ -75,7 +77,7 @@ name = "tokyo-night"
 # Named punctuation such as minus, comma, ampersand, plus, and backtick is also accepted.
 # Most reliable direct bindings are ctrl+letter, function keys, and explicit modified chords.
 # alt+..., cmd/super, and punctuation-with-modifiers may depend on your terminal/tmux setup.
-# prefix = "ctrl+b"
+prefix = "ctrl+space"
 
 # Prefix-mode actions
 # help = "prefix+?"
@@ -97,10 +99,10 @@ name = "tokyo-night"
 # next_agent = ""         # optional, unset by default
 # focus_agent = ""        # optional indexed binding, e.g. "prefix+alt+1..9"
 # remote_image_paste = "ctrl+v" # only active in herdr --remote; empty disables raw-key image paste
-# new_tab = "prefix+c"
+new_tab = "prefix+n"
 # rename_tab = "prefix+shift+t"
-# previous_tab = "prefix+p"
-# next_tab = "prefix+n"
+previous_tab = "ctrl+shift+h"
+next_tab = "ctrl+shift+l"
 # move_tab_previous = ""   # optional, e.g. "alt+shift+left" moves the tab toward the front
 # move_tab_next = ""       # optional, e.g. "alt+shift+right" moves the tab toward the back
 # switch_tab = "prefix+1..9"
@@ -109,10 +111,10 @@ name = "tokyo-night"
 # rename_pane = "prefix+shift+p"
 # edit_scrollback = "prefix+e"
 # clear_pane = ""                  # unbound; e.g. "prefix+ctrl+k"
-# focus_pane_left = "prefix+h"
-# focus_pane_down = "prefix+j"
-# focus_pane_up = "prefix+k"
-# focus_pane_right = "prefix+l"
+# focus_pane_left = "ctrl+h"
+# focus_pane_down = "ctrl+j"
+# focus_pane_up = "ctrl+k"
+# focus_pane_right = "ctrl+l"
 # cycle_pane_next = "prefix+tab"
 # cycle_pane_previous = "prefix+shift+tab"
 # last_pane = ""          # optional, unset by default; bind e.g. "prefix+tab" for global back-and-forth
@@ -126,9 +128,8 @@ name = "tokyo-night"
 # resize_pane_up = ""     # optional, e.g. "ctrl+shift+alt+up"
 # resize_pane_right = ""  # optional, e.g. "ctrl+shift+alt+right"
 # toggle_sidebar = "prefix+b"
-
-# Navigate-mode movement. These local shortcuts win while navigate mode is open.
-# They are independent from focus_pane_*. Do not include prefix+, esc, enter, tab, or 1..9 here.
+# navigate-mode movement. these local shortcuts win while navigate mode is open.
+# they are independent from focus_pane_*. do not include prefix+, esc, enter, tab, or 1..9 here.
 # navigate_workspace_up = "up"
 # navigate_workspace_down = "down"
 # navigate_pane_left = "h"      # left arrow always focuses the pane to the left
@@ -136,12 +137,12 @@ name = "tokyo-night"
 # navigate_pane_up = "k"
 # navigate_pane_right = "l"     # right arrow always focuses the pane to the right
 
-# Custom commands use the same binding syntax.
+# custom commands use the same binding syntax.
 # type = "shell" runs detached in the background.
 # type = "pane" opens a temporary pane and closes it when the command exits.
 # type = "popup" opens a session-modal terminal without changing the tab layout.
-# Popup width and height accept terminal cells or percentages such as "80%".
-# On Windows, command strings run through cmd.exe /d /c.
+# popup width and height accept terminal cells or percentages such as "80%".
+# on windows, command strings run through cmd.exe /d /c.
 # [[keys.command]]
 # key = "prefix+alt+g"
 # type = "popup"
@@ -149,15 +150,15 @@ name = "tokyo-night"
 # width = "80%"
 # height = "80%"
 
-# Legacy indexed shortcut config is still parsed for compatibility.
-# Prefer switch_tab, switch_workspace, and focus_agent for new configs.
+# legacy indexed shortcut config is still parsed for compatibility.
+# prefer switch_tab, switch_workspace, and focus_agent for new configs.
 # [keys.indexed]
 # tabs = ""       # e.g. "ctrl" makes ctrl+1..9 switch tabs directly
 # workspaces = "" # e.g. "ctrl+shift" makes ctrl+shift+1..9 switch workspaces directly
 # agents = ""     # e.g. "alt" makes alt+1..9 focus agent rows directly
 
-# Size of the virtual terminal used when no client is attached.
-# Attached clients always use their own terminal size.
+# size of the virtual terminal used when no client is attached.
+# attached clients always use their own terminal size.
 [server]
 # headless_cols = 120
 # headless_rows = 40
@@ -166,110 +167,111 @@ name = "tokyo-night"
 # directory = "~/.herdr/worktrees"
 
 [ui]
-# Sidebar width (auto-scaled based on workspace names, this sets the default)
+# sidebar width (auto-scaled based on workspace names, this sets the default)
 # sidebar_width = 26
 
-# Minimum sidebar width when expanded (columns)
+# minimum sidebar width when expanded (columns)
 # sidebar_min_width = 18
 
-# Maximum sidebar width when expanded (columns)
+# maximum sidebar width when expanded (columns)
 # sidebar_max_width = 36
 
-# Start with the sidebar collapsed. Changes take effect on the next launch.
+# start with the sidebar collapsed. changes take effect on the next launch.
 # sidebar_start_collapsed = false
 
-# Collapsed sidebar presentation: "compact" keeps the narrow status rail, "hidden" uses zero width.
+# collapsed sidebar presentation: "compact" keeps the narrow status rail, "hidden" uses zero width.
 # sidebar_collapsed_mode = "compact"
 
-# Terminal width at or below which Herdr uses the mobile single-column layout.
-# Increase this for foldables, tablets, or wide phone terminals.
+# terminal width at or below which herdr uses the mobile single-column layout.
+# increase this for foldables, tablets, or wide phone terminals.
 # mobile_width_threshold = 64
 
-# Capture mouse input for Herdr's mouse UI.
-# Set false to let the terminal handle normal clicks, such as Cmd-clicking URLs.
-# Pane apps like lazygit and btop can still receive mouse when they request it.
+# capture mouse input for herdr's mouse ui.
+# set false to let the terminal handle normal clicks, such as cmd-clicking urls.
+# pane apps like lazygit and btop can still receive mouse when they request it.
 # mouse_capture = true
 
-# Automatically copy text selected with the mouse.
-# Set false to retain drag or double-click word selection until Ctrl+C,
-# or Cmd+C when the host forwards it, copies and clears it.
+# automatically copy text selected with the mouse.
+# set false to retain drag or double-click word selection until ctrl+c,
+# or cmd+c when the host forwards it, copies and clears it.
 # copy_on_select = true
 
-# Host cursor policy: "auto", "native", or "drawn".
-# "auto" draws Herdr's own cursor on native Windows builds and WSL to avoid ConPTY cursor flicker, and uses the native terminal cursor elsewhere.
-# "native" always uses the outer terminal cursor. "drawn" always draws Herdr's cursor as terminal cell content.
+# host cursor policy: "auto", "native", or "drawn".
+# "auto" draws herdr's own cursor on native windows builds and wsl to avoid conpty cursor flicker, and uses the native terminal cursor elsewhere.
+# "native" always uses the outer terminal cursor. "drawn" always draws herdr's cursor as terminal cell content.
 # host_cursor = "auto"
 
-# Optional modifier that forwards right-click hold/drag gestures to pane apps instead of opening Herdr's pane menu.
-# Empty/off disables this. Shift is intentionally unsupported because terminals commonly reserve Shift+mouse.
+# optional modifier that forwards right-click hold/drag gestures to pane apps instead of opening herdr's pane menu.
+# empty/off disables this. shift is intentionally unsupported because terminals commonly reserve shift+mouse.
 # right_click_passthrough_modifier = ""
 
-# Force a full redraw when the outer terminal regains focus.
-# Set false to reduce visible flashing when switching back to Herdr.
-# Trade-off: rare host terminal surface corruption may persist until the next full redraw.
+# force a full redraw when the outer terminal regains focus.
+# set false to reduce visible flashing when switching back to herdr.
+# trade-off: rare host terminal surface corruption may persist until the next full redraw.
 # redraw_on_focus_gained = true
 
-# Pane scrollback lines to scroll per mouse wheel notch.
+# pane scrollback lines to scroll per mouse wheel notch.
 # mouse_scroll_lines = 3
 
-# Ask for confirmation before closing a workspace
+# ask for confirmation before closing a workspace
 # confirm_close = true
 
-# Ask for a tab name before creating a new tab.
-# Set false to create tabs immediately with generated names.
+# ask for a tab name before creating a new tab.
+# set false to create tabs immediately with generated names.
 # prompt_new_tab_name = true
 
-# Ask for a workspace name before interactive creation.
+# ask for a workspace name before interactive creation.
 # prompt_new_workspace_name = false
 
-# Draw borders around split panes.
+# draw borders around split panes.
 # "auto" draws them only for split panes, "always" also frames a lone pane
 # (only while pane_outer_borders is enabled), "off" disables them.
-# Legacy booleans still parse: true = "auto", false = "off".
+# legacy booleans still parse: true = "auto", false = "off".
 # pane_borders = "auto"
 
-# Draw borders along the outside edge of the pane area.
-# Disable for tmux-style internal splitters without an outside frame.
+# draw borders along the outside edge of the pane area.
+# disable for tmux-style internal splitters without an outside frame.
 # pane_outer_borders = true
 
-# Draw interactive scrollbars beside terminal panes.
-# Set false to reclaim the scrollbar column and keep it out of terminal-native selections.
+# draw interactive scrollbars beside terminal panes.
+# set false to reclaim the scrollbar column and keep it out of terminal-native selections.
 # pane_scrollbars = true
 
-# Keep split panes visually separated instead of sharing divider borders.
-# pane_gaps = true
+# keep split panes visually separated instead of sharing divider borders.
+pane_gaps = false
 
-# Show detected/reported agent labels in split pane borders when no manual pane name is set.
-# show_agent_labels_on_pane_borders = false
+# show detected/reported agent labels in split pane borders when no manual pane name is set.
+show_agent_labels_on_pane_borders = false
 
-# Hide the tab row when a workspace has exactly one tab.
-# New tabs can still be created with the configured keybinding.
+# hide the tab row when a workspace has exactly one tab.
+# new tabs can still be created with the configured keybinding.
 # hide_tab_bar_when_single_tab = false
 
-# Desktop tab row placement: "top" or "bottom".
+# desktop tab row placement: "top" or "bottom".
 # tab_bar_position = "top"
 
-# Ordered status entries at the right edge of the desktop tab bar.
-# Supported types: zoom, hostname, datetime, text, and command.
-# Hostname, datetime, and command entries resolve on the Herdr server.
-# tab_bar_right = []
+# ordered status entries at the right edge of the desktop tab bar.
+# supported types: zoom, hostname, datetime, text, and command.
+# hostname, datetime, and command entries resolve on the herdr server.
+# tab_bar_right = ["command"]
 # tab_bar_right_separator = " "
 
-# Title Herdr writes to the terminal it runs in, which is what window managers
-# show in title, tab, and group bars. Tokens are {hostname}, {workspace}, {tab},
+# title herdr writes to the terminal it runs in, which is what window managers
+# show in title, tab, and group bars. tokens are {hostname}, {workspace}, {tab},
 # {pane}, and {terminal_title}; {{ and }} are literal braces.
-# The title renders on the Herdr server, so {hostname} names the host the panes
+# the title renders on the herdr server, so {hostname} names the host the panes
 # run on even when attaching from a remote client.
-# Set to "" to leave the outer terminal title alone.
+# set to "" to leave the outer terminal title alone.
 # window_title = "{hostname}: {workspace}"
 
-# Agent panel ordering: "spaces" (grouped by space) or "priority" (attention queue).
+# agent panel ordering: "spaces" (grouped by space) or "priority" (attention queue).
 # "workspaces" is accepted as an alias for "spaces".
 # agent_panel_sort = "spaces"
 
-# Agent status indicators: "dots" preserves the compact color marks; "symbols" uses
+# agent status indicators: "dots" preserves the compact color marks; "symbols" uses
 # distinct static glyphs for blocked, working, done, idle, and unknown states.
 # status_indicators = "dots"
+# status_indicators = "symbols"
 
 # Accent color for highlights, borders, and navigation UI.
 # Accepts: hex (#89b4fa), named colors (cyan, blue, magenta), or rgb(r,g,b)
@@ -305,8 +307,9 @@ name = "tokyo-night"
 # delivery = "off"
 # delay_seconds = 1
 
+delivery = "off"
 [ui.toast.herdr]
-# position = "bottom-right"
+position = "bottom-right"
 
 [ui.toast.clipboard]
 # enabled = true
@@ -375,3 +378,28 @@ pane_history = false
 # Maximum scrollback buffer size in bytes retained per pane terminal.
 # Matches Ghostty's default scrollback-limit behavior.
 # scrollback_limit_bytes = 10000000
+#
+#
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "vim-herdr-navigation.left"
+description = "navigate left (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "vim-herdr-navigation.down"
+description = "navigate down (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "vim-herdr-navigation.up"
+description = "navigate up (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "vim-herdr-navigation.right"
+description = "navigate right (vim/herdr)"

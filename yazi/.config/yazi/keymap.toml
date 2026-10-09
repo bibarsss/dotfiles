@@ -1,0 +1,6 @@
+[[mgr.prepend_keymap]]
+on = ["<C-o>"]
+run = '''
+shell --block -- nvim .
+'''
+desc = "Open current directory in Neovim"

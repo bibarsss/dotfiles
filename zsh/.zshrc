@@ -1,4 +1,3 @@
-export PATH="$HOME/.local/bin:$PATH"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,7 +10,10 @@ fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -139,10 +141,9 @@ command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh --cmd cd)"
 ___MY_VMOPTIONS_SHELL_FILE="$HOME/.jetbrains.vmoptions.sh"
 [[ -f "$___MY_VMOPTIONS_SHELL_FILE" ]] && source "$___MY_VMOPTIONS_SHELL_FILE"
 
-alias phpstorm='nohup phpstorm "$@" > /dev/null 2>&1 &' 
-# nv() {
-#   neovide --frame=none --vsync "$@"
-# }
+alias y="yazi"
+alias v="nvim"
+
 nv() {
   if [[ -d "$1" ]]; then
     cd "$1" || return

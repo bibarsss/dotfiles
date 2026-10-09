@@ -5,11 +5,11 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      -- transparent = true,
-      -- styles = {
-      --   sidebars = "transparent",
-      --   floats = "transparent",
-      -- },
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
       -- style = "night", -- Choose between storm, moon, night, day
     },
   },

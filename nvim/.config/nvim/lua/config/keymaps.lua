@@ -17,10 +17,12 @@ end, { desc = "Focus or Open Explorer" })
 vim.keymap.set({ "n", "v", "o", "i" }, "<M-/>", "<cmd>nohlsearch<cr>", { desc = "Clear Search Highlight" })
 
 vim.keymap.set("n", "<leader><delete>", "<cmd>%bd<cr>", { desc = "Close All Buffers" })
-
 vim.keymap.set("n", "<leader><CR>", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
 
 vim.keymap.del({ "n", "i", "v" }, "<A-j>")
 vim.keymap.del({ "n", "i", "v" }, "<A-k>")
+
+vim.keymap.set("n", "<leader>v", "<C-w>v", { desc = "Split right" })
+vim.keymap.set("n", "<leader>-", "<C-w>s", { desc = "Split down" })

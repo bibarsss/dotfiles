@@ -1,8 +1,9 @@
 onboarding = false
 
 [theme]
-name = "tokyo-night"
+name = "terminal"
 
+auto_switch = false
 [terminal]
 
 [update]

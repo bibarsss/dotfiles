@@ -21,16 +21,20 @@ vim.keymap.set("n", "<leader><CR>", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
 
--- Alt+j/k is byte-identical to a fast Esc,j / Esc,k, so move lines with Ctrl+Shift+j/k instead
+-- Alt+j/k is byte-identical to a fast Esc,j / Esc,k, so move lines with Alt+Shift+j/k (<A-J>/<A-K>) instead
 vim.keymap.del({ "n", "i", "v" }, "<A-j>")
 vim.keymap.del({ "n", "i", "v" }, "<A-k>")
 
-vim.keymap.set("n", "<C-S-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
-vim.keymap.set("n", "<C-S-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
-vim.keymap.set("i", "<C-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-vim.keymap.set("i", "<C-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-vim.keymap.set("v", "<C-S-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
-vim.keymap.set("v", "<C-S-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+-- <A-J> is the legacy Esc,J form; <A-S-j> is what the kitty keyboard protocol reports
+for _, key in ipairs({ { "<A-J>", "<A-K>" }, { "<A-S-j>", "<A-S-k>" } }) do
+  local down, up = key[1], key[2]
+  vim.keymap.set("n", down, "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+  vim.keymap.set("n", up, "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+  vim.keymap.set("i", down, "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+  vim.keymap.set("i", up, "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+  vim.keymap.set("v", down, ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+  vim.keymap.set("v", up, ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+end
 
 vim.keymap.set("n", "<leader>v", "<C-w>v", { desc = "Split right" })
 vim.keymap.set("n", "<leader>-", "<C-w>s", { desc = "Split down" })

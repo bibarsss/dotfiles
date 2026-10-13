@@ -132,23 +132,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # zoxide
-command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh --cmd cd)"
-
-# JetBrains
-___MY_VMOPTIONS_SHELL_FILE="$HOME/.jetbrains.vmoptions.sh"
-[[ -f "$___MY_VMOPTIONS_SHELL_FILE" ]] && source "$___MY_VMOPTIONS_SHELL_FILE"
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 
 alias y="yazi"
 alias v="nvim"
-
-nv() {
-  if [[ -d "$1" ]]; then
-    cd "$1" || return
-    neovide --frame=none --vsync .
-  else
-    neovide --frame=none --vsync "$@"
-  fi
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -32,7 +32,12 @@ return {
       pattern = "VeryLazy",
       once = true,
       callback = function()
-        dofile(vim.fn.expand("~/.config/herdr/vim-herdr-navigation/editor/nvim.lua"))
+        -- Herdr clones the plugin into plugins/github/<name>-<hash>, so glob
+        -- for the hash instead of hardcoding it.
+        local matches = vim.fn.glob("~/.config/herdr/plugins/github/vim-herdr-navigation-*/editor/nvim.lua", false, true)
+        if matches[1] then
+          dofile(matches[1])
+        end
 
         -- Snacks explorer renders its list/input as floating windows nested
         -- inside a box split. `wincmd h` from there doesn't reliably report

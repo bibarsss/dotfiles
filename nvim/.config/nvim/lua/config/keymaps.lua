@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- remembers explorer's hidden/ignored toggles (alt+h / alt+i) between open/close
+local explorer_state = { hidden = false, ignored = false }
+
 -- to not closing when i repeatedly click on <leader>e
 vim.keymap.set("n", "<leader>e", function()
   local picker = Snacks.picker.get({ source = "explorer" })[1]
@@ -9,7 +12,14 @@ vim.keymap.set("n", "<leader>e", function()
   if picker then
     picker:focus("list")
   else
-    Snacks.explorer()
+    Snacks.explorer({
+      hidden = explorer_state.hidden,
+      ignored = explorer_state.ignored,
+      on_close = function(p)
+        explorer_state.hidden = p.opts.hidden
+        explorer_state.ignored = p.opts.ignored
+      end,
+    })
   end
 end, { desc = "Focus or Open Explorer" })
 

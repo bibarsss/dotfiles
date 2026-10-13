@@ -10,22 +10,13 @@ sudo apt install zsh git
 
 # install P10k
 
-# get configs
+then clone this repo and use
 
 ```
-git clone git@github.com:YOU/dotfiles.git ~/dotfiles
+stow [folder]
 ```
 
-# install neovide
-
-```
-mkdir -p ~/.local/bin
-
-wget -O ~/.local/bin/neovide \
-  https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage
-
-chmod +x ~/.local/bin/neovide
-```
+to stow needed dot file
 
 # install tokyonight to yazi
 
@@ -36,14 +27,13 @@ ya pkg install
 
 # herdr plugins:
 
-https://github.com/paulbkim-dev/vim-herdr-navigation
+https://github.com/speardragon/herdr-plugin-manager
 
 ```
-herdr plugin link /path/to/vim-herdr-navigation   # local checkout herdr plugin action list --plugin vim-herdr-navigation
+herdr plugin install speardragon/herdr-plugin-manager
 ```
 
-https://github.com/ChmaraX/herdr-nvim
+list of plugins:
 
-```
-herdr plugin install ChmaraX/herdr-nvim
-```
+- ChmaraX/herdr-nvim
+- paulbkim-dev/vim-herdr-navigation

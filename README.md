@@ -33,3 +33,17 @@ chmod +x ~/.local/bin/neovide
 ya pkg add mingo99/tokyonight
 ya pkg install
 ```
+
+# herdr plugins:
+
+https://github.com/paulbkim-dev/vim-herdr-navigation
+
+```
+herdr plugin link /path/to/vim-herdr-navigation   # local checkout herdr plugin action list --plugin vim-herdr-navigation
+```
+
+https://github.com/ChmaraX/herdr-nvim
+
+```
+herdr plugin install ChmaraX/herdr-nvim
+```

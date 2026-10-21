@@ -1,6 +1,6 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- ============================================================================
+-- Explorer
+-- ============================================================================
 
 -- remembers explorer's hidden/ignored toggles (alt+h / alt+i) between open/close
 local explorer_state = { hidden = false, ignored = false }
@@ -23,13 +23,25 @@ vim.keymap.set("n", "<leader>e", function()
   end
 end, { desc = "Focus or Open Explorer" })
 
+-- ============================================================================
+-- Search
+-- ============================================================================
+
 -- alt+/ to clear my search highlights
 vim.keymap.set({ "n", "v", "o", "i" }, "<M-/>", "<cmd>nohlsearch<cr>", { desc = "Clear Search Highlight" })
+
+-- ============================================================================
+-- Buffers
+-- ============================================================================
 
 vim.keymap.set("n", "<leader><delete>", "<cmd>%bd<cr>", { desc = "Close All Buffers" })
 vim.keymap.set("n", "<leader><CR>", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
+
+-- ============================================================================
+-- Move lines
+-- ============================================================================
 
 -- Alt+j/k is byte-identical to a fast Esc,j / Esc,k, so move lines with Alt+Shift+j/k (<A-J>/<A-K>) instead
 vim.keymap.del({ "n", "i", "v" }, "<A-j>")
@@ -45,6 +57,10 @@ for _, key in ipairs({ { "<A-J>", "<A-K>" }, { "<A-S-j>", "<A-S-k>" } }) do
   vim.keymap.set("v", down, ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
   vim.keymap.set("v", up, ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 end
+
+-- ============================================================================
+-- Splits
+-- ============================================================================
 
 vim.keymap.set("n", "<leader>v", "<C-w>v", { desc = "Split right" })
 vim.keymap.set("n", "<leader>-", "<C-w>s", { desc = "Split down" })

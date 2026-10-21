@@ -18,6 +18,7 @@ config.font = wezterm.font("AnnotationM Nerd Font Mono")
 config.enable_wayland = false
 config.audible_bell = "Disabled"
 config.enable_tab_bar = false
+config.window_close_confirmation = "NeverPrompt"
 
 config.visual_bell = {
 	fade_in_duration_ms = 0,
@@ -75,5 +76,10 @@ config.keys = {
 		action = wezterm.action.ResetFontSize,
 	},
 }
+
+wezterm.on("gui-startup", function(cmd)
+	local _, _, window = wezterm.mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
 
 return config

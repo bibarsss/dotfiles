@@ -14,6 +14,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export EDITOR="nvim"
 export VISUAL="nvim"
+export SUDO_EDITOR="$(which nvim)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,

@@ -4,6 +4,13 @@ onboarding = false
 name = "terminal"
 
 auto_switch = false
+
+[theme.custom]
+subtext0 = "#a9b1d6"
+overlay0 = "#565f89"
+mauve = "#bb9af7"
+active_row_bg = "#232636"
+
 [terminal]
 
 [update]

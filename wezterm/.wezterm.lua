@@ -77,6 +77,15 @@ config.keys = {
 	},
 }
 
+config.mouse_bindings = {
+	-- Drag window with Alt + left click
+	{
+		event = { Drag = { streak = 1, button = "Left" } },
+		mods = "ALT",
+		action = wezterm.action.StartWindowDrag,
+	},
+}
+
 wezterm.on("gui-startup", function(cmd)
 	local _, _, window = wezterm.mux.spawn_window(cmd or {})
 	window:gui_window():maximize()
